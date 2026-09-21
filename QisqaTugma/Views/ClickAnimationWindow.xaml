@@ -1,0 +1,45 @@
+<Window x:Class="QisqaTugma.Views.ClickAnimationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        Width="100" Height="100"
+        IsHitTestVisible="False"
+        Loaded="Window_Loaded">
+    <Grid>
+        <!-- Ripple -->
+        <Ellipse x:Name="RippleEllipse"
+                 Width="10" Height="10"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 StrokeThickness="3"
+                 Stroke="#FFFF4444"
+                 Fill="Transparent"
+                 Opacity="1"
+                 Visibility="Collapsed"/>
+
+        <!-- Flash -->
+        <Ellipse x:Name="FlashEllipse"
+                 Width="40" Height="40"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Fill="#80FF4444"
+                 Opacity="0"
+                 Visibility="Collapsed"/>
+
+        <!-- Ring -->
+        <Ellipse x:Name="RingEllipse"
+                 Width="50" Height="50"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 StrokeThickness="4"
+                 Stroke="#FFFF4444"
+                 Fill="Transparent"
+                 Opacity="0"
+                 Visibility="Collapsed"/>
+    </Grid>
+</Window>

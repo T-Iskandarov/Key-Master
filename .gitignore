@@ -1,0 +1,15 @@
+# .NET Core
+bin/
+obj/
+Publish/
+Installer/
+*.user
+*.suo
+*.sln.docstates
+.vs/
+
+# Ignore the Python generated files
+*.bmp
+
+# Make sure we track the installer as requested
+!KeyMaster_Setup.exe

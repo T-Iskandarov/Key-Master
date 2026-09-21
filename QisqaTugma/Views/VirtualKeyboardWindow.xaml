@@ -1,0 +1,48 @@
+<Window x:Class="QisqaTugma.Views.VirtualKeyboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight"
+        Loaded="Window_Loaded">
+    <Border Background="#E0222222" CornerRadius="12" Padding="10" Margin="5">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="15" ShadowDepth="3" Opacity="0.5"/>
+        </Border.Effect>
+        <StackPanel Orientation="Horizontal">
+            <!-- Asosiy klaviatura -->
+            <StackPanel x:Name="KeyboardPanel" Orientation="Vertical" Margin="0,0,20,0">
+                <WrapPanel x:Name="Row0" Margin="0,0,0,8"/>
+                <WrapPanel x:Name="Row1" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="Row2" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="Row3" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="Row4" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="Row5"/>
+            </StackPanel>
+            
+            <!-- Navigatsiya qismi -->
+            <StackPanel x:Name="NavPanel" Orientation="Vertical" Margin="0,0,20,0">
+                <WrapPanel x:Name="NavRow0" Margin="0,0,0,8"/>
+                <WrapPanel x:Name="NavRow1" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="NavRow2" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="NavRow3" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="NavRow4" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="NavRow5"/>
+            </StackPanel>
+
+            <!-- Numpad qismi -->
+            <StackPanel x:Name="NumpadPanel" Orientation="Vertical">
+                <WrapPanel x:Name="NumRow0" Margin="0,0,0,8"/>
+                <WrapPanel x:Name="NumRow1" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="NumRow2" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="NumRow3" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="NumRow4" Margin="0,0,0,4"/>
+                <WrapPanel x:Name="NumRow5"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>
