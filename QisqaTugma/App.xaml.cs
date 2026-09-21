@@ -2,6 +2,7 @@ using System.Drawing;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using System.Threading;
 using QisqaTugma.Helpers;
 using QisqaTugma.Models;
 using QisqaTugma.Services;
@@ -39,6 +40,8 @@ public partial class App : Application
     // Virtual keyboard hotkey tracking
     private bool _ctrlHeld;
 
+    private Mutex? _mutex;
+
     public void ReloadDictionary()
     {
         _dictionaryData = DictionaryService.Load();
@@ -46,6 +49,16 @@ public partial class App : Application
 
     protected override void OnStartup(StartupEventArgs e)
     {
+        bool createdNew;
+        _mutex = new Mutex(true, "KeyMasterApp_Unique_Mutex_123", out createdNew);
+
+        if (!createdNew)
+        {
+            System.Windows.MessageBox.Show("Dastur allaqachon ishga tushirilgan! Iltimos ekranning o'ng pastki burchagidagi (soat yonidagi) ikonkalarni tekshiring.", "Key Master", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
+            Application.Current.Shutdown();
+            return;
+        }
+
         base.OnStartup(e);
 
         // Load settings
@@ -84,6 +97,9 @@ public partial class App : Application
 
         // Setup system tray
         SetupTrayIcon();
+        
+        // Show settings window on startup since we don't start with Windows automatically
+        ShowSettings();
     }
 
     private void SetupTrayIcon()
