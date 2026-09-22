@@ -168,10 +168,10 @@
 
                 <StackPanel Style="{StaticResource SettingRow}">
                     <TextBlock x:Name="LblSpotlightRadius" Text="Spotlight radiusi:" Style="{StaticResource Label}"/>
-                    <Slider x:Name="SpotlightSlider" Width="150" Minimum="20" Maximum="100"
-                            TickFrequency="5" IsSnapToTickEnabled="True"
+                    <Slider x:Name="SpotlightSlider" Width="150" Minimum="50" Maximum="300"
+                            TickFrequency="10" IsSnapToTickEnabled="True"
                             ValueChanged="SpotlightSlider_Changed"/>
-                    <TextBlock x:Name="SpotlightLabel" Text="50" Margin="8,0,0,0"
+                    <TextBlock x:Name="SpotlightLabel" Text="150" Margin="8,0,0,0"
                                VerticalAlignment="Center" Width="30"/>
                 </StackPanel>
 
